@@ -6,25 +6,23 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class BMICalculator extends JFrame{
-	  private JButton jbtBMICalculator1 = new JButton("clear"); 
-	  private JButton jbtBMICalculator2 = new JButton("enter"); 
-	
+	  
 	  private static JTextField jtfHeight = new JTextField();
 	  private static JTextField jtfWeight = new JTextField();
 	  private static JTextField jtfBMI = new JTextField();
 	  private static JTextField jtfStatus = new JTextField();
-	  JButton bt1 = new JButton("1");
-	  JButton bt2 = new JButton("2");
-	  JButton bt3 = new JButton("3");
-	  JButton bt4 = new JButton("4");
-	  JButton bt5 = new JButton("5");
-	  JButton bt6 = new JButton("6");
-	  JButton bt7 = new JButton("7");
-	  JButton bt8 = new JButton("8");
-	  JButton bt9 = new JButton("9");
-	  JButton bt0 = new JButton("0");
-	  JButton btclear = new JButton("clear");
-	  JButton btenter = new JButton("enter");
+	  private JButton bt1 = new JButton("1");
+	  private JButton bt2 = new JButton("2");
+	  private JButton bt3 = new JButton("3");
+	  private JButton bt4 = new JButton("4");
+	  private JButton bt5 = new JButton("5");
+	  private JButton bt6 = new JButton("6");
+	  private JButton bt7 = new JButton("7");
+	  private JButton bt8 = new JButton("8");
+	  private JButton bt9 = new JButton("9");
+	  private JButton bt0 = new JButton("0");
+	  private JButton btclear = new JButton("clear");
+	  private JButton btenter = new JButton("enter");
 	 
 	  public BMICalculator(){
 		  JPanel p3 = new JPanel();
@@ -49,9 +47,21 @@ public class BMICalculator extends JFrame{
 			p2.add(new JButton("backspace"));
 			p2.add(new JButton("enter"));
 			
+			bt1.addActionListener(new UseBMIClass());
+			bt2.addActionListener(new UseBMIClass());
+			bt3.addActionListener(new UseBMIClass());
+			bt4.addActionListener(new UseBMIClass());
+			bt5.addActionListener(new UseBMIClass());
+			bt6.addActionListener(new UseBMIClass());
+			bt7.addActionListener(new UseBMIClass());
+			bt8.addActionListener(new UseBMIClass());
+			bt9.addActionListener(new UseBMIClass());
+			bt0.addActionListener(new UseBMIClass());
 			
-			jbtBMICalculator1.addActionListener(new UseBMIClass());
-			jbtBMICalculator2.addActionListener(new UseBMIClass());
+			
+			
+			btclear.addActionListener(new UseBMIClass());
+			btenter.addActionListener(new UseBMIClass());
 }
 
 private static class UseBMIClass  implements ActionListener{

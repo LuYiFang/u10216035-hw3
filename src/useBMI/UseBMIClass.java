@@ -8,7 +8,11 @@ class SetGUI extends JFrame{
 	p1.setLayout(new GridLayout(4,3));
 	
 	for(int i = 1;i < 10; i++){
-		p1.add(new JButton(+ i));
+		p1.add(new JButton("" + i));
+		p1.add(new JButton("clear"));
+		p1.add(new JButton("" + 0));
+		p1.add(new JButton("."));
+		
 	}
 }
 

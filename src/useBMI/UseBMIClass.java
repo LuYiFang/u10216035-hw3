@@ -5,34 +5,47 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-abstract class SetGUI extends JFrame implements ActionListener{
+abstract class ButtonListener extends JFrame implements ActionListener  {
 	
-	JPanel p1 = new JPanel();
-	p1.setLayout(new GridLayout(4,3));
-	
-	for(int i = 1;i < 10; i++){
-		p1.add(new JButton("" + i));
-	}	
-	p1.add(new JButton("clear"));
-	p1.add(new JButton("" + 0));
-	p1.add(new JButton("."));	
-	
-		JPanel p2 = new JPanel();
-	p2.setLayout(new GridLayout(2,1));
-	p2.add(new JButton("backspace"));
-	p2.add(new JButton("enter"));
-	
-	
-	@Override
-	public void actionPerform(ActionEvent e){
-		
-	}
-	
+	 private JTextField jtfHight = new JTextField();
+	  private JTextField jtfWeight = new JTextField();
+	  private JTextField jtfBMI = new JTextField();
+	  private JTextField jtfStatus = new JTextField();
+	 
+	  public ButtonListener(){
+		  JPanel p3 = new JPanel();
+		  p3.setLayout(new GridLayout(1,4));
+		  p3.add(jtfHight);
+		  p3.add(jtfWeight);
+		  p3.add(jtfBMI);
+		  p3.add(jtfStatus);
+		  
+		  JPanel p1 = new JPanel();
+			p1.setLayout(new GridLayout(4,3));
+			
+			for(int i = 1;i < 10; i++){
+				p1.add(new JButton("" + i));
+			}	
+			p1.add(new JButton("clear"));
+			p1.add(new JButton("" + 0));
+			p1.add(new JButton("."));	
+			
+				JPanel p2 = new JPanel();
+			p2.setLayout(new GridLayout(2,1));
+			p2.add(new JButton("backspace"));
+			p2.add(new JButton("enter"));
+			
+			
+			@Override
+			public void actionPerform(ActionEvent e){
+				
+			}
+	  }
 }
 
-public class UseBMIClass {
+public class UseBMIClass{
   public static void main(String[] args) {
-	  SetGUI frame = new SetGUI();
+	  ButtonListener frame = new ButtonListener();
 	  frame.setSize(400,500);
 	  frame.setTitle("BMI Calculator");
 	  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -47,20 +60,8 @@ public class UseBMIClass {
       System.out.println("The BMI for " + bmi2.getName() + " is "
         + bmi2.getBMI() + " " + bmi2.getStatus());
   }
-  
-  private JTextField jtfHight = new JTextField();
-  private JTextField jtfWeight = new JTextField();
-  private JTextField jtfBMI = new JTextField();
-  private JTextField jtfStatus = new JTextField();
-  public UseBMIClass(){
-	  JPanel p3 = new JPanel();
-	  p3.setLayout(new GridLayout(1,4));
-	  p3.add(jtfHight);
-	  p3.add(jtfWeight);
-	  p3.add(jtfBMI);
-	  p3.add(jtfStatus);
 }	  
-}
+
 
 
 class BMI {

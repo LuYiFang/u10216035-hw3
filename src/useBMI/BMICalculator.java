@@ -28,8 +28,8 @@ public class BMICalculator extends JFrame{
 	
 	  public BMICalculator(){
 		  JPanel p3 = new JPanel(new GridLayout(2,4));
-		  p3.add(new JLabel("Weight"));
-		  p3.add(new JLabel("Height"));
+		  p3.add(new JLabel("Weight(in pounds)"));
+		  p3.add(new JLabel("Height(in inches)"));
 		  p3.add(new JLabel("BMI"));
 		  p3.add(new JLabel("Status"));
 		  p3.add(jtfWeight);
@@ -38,11 +38,16 @@ public class BMICalculator extends JFrame{
 		  p3.add(jtfStatus);
 		  
 		  JPanel p1 = new JPanel();
-			p1.setLayout(new GridLayout(4,3));
-			
-			for(int i = 1;i < 10; i++){
-				p1.add(new JButton("" + i));
-			}	
+			p1.setLayout(new GridLayout(4,3));		
+			p1.add(bt1);
+			p1.add(bt2);
+			p1.add(bt3);
+			p1.add(bt4);
+			p1.add(bt5);
+			p1.add(bt6);
+			p1.add(bt7);
+			p1.add(bt8);
+			p1.add(bt9);
 			p1.add(btclear);
 			p1.add(bt0);
 			p1.add(btpoint);	
@@ -78,7 +83,7 @@ public class BMICalculator extends JFrame{
 private static class UseBMIClass  implements ActionListener{
   public static void main(String[] args) {
 	  BMICalculator frame = new BMICalculator();
-	  frame.setSize(500,400);
+	  frame.setSize(700,400);
 	  frame.setTitle("BMI Calculator");
 	  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	  frame.setVisible(true);
@@ -95,32 +100,44 @@ private static class UseBMIClass  implements ActionListener{
   @Override
   public void actionPerformed(ActionEvent e){
 	  
-	  String input = jtfHeight.getText();
-	  
+	  String hinput = jtfHeight.getText();
+	  String winput = jtfWeight.getText();
 	  if(e.getSource() == bt1){
-		  jtfHeight.setText(input + "1");
+		  jtfHeight.setText(hinput + "1");
+		  jtfWeight.setText(winput + "1");
 	  }else if(e.getSource() == bt2){
-		  jtfHeight.setText(input + "2");
+		  jtfHeight.setText(hinput + "2");
+		  jtfWeight.setText(winput + "2");
 	  }else if(e.getSource() == bt3){
-		  jtfHeight.setText(input + "3");
+		  jtfHeight.setText(hinput + "3");
+		  jtfWeight.setText(winput + "3");
 	  }else if(e.getSource() == bt4){
-		  jtfHeight.setText(input + "4");
+		  jtfHeight.setText(hinput + "4");
+		  jtfWeight.setText(winput + "4");
 	  }else if(e.getSource() == bt5){
-		  jtfHeight.setText(input + "5");
+		  jtfHeight.setText(hinput + "5");
+		  jtfWeight.setText(winput + "5");
 	  }else if(e.getSource() == bt6){
-		  jtfHeight.setText(input + "6");
+		  jtfHeight.setText(hinput + "6");
+		  jtfWeight.setText(winput + "6");
 	  }else if(e.getSource() == bt7){
-		  jtfHeight.setText(input + "7");
+		  jtfHeight.setText(hinput + "7");
+		  jtfWeight.setText(winput + "7");
 	  }else if(e.getSource() == bt8){
-		  jtfHeight.setText(input + "8");
+		  jtfHeight.setText(hinput + "8");
+		  jtfWeight.setText(winput + "8");
 	  }else if(e.getSource() == bt9){
-		  jtfHeight.setText(input + "9");
+		  jtfHeight.setText(hinput + "9");
+		  jtfWeight.setText(winput + "9");
 	  }else if(e.getSource() == bt0){
-		  jtfHeight.setText(input + "0");
+		  jtfHeight.setText(hinput + "0");
+		  jtfWeight.setText(winput + "0");
 	  }else if(e.getSource() == btpoint){
-		  jtfHeight.setText(input + ".");
+		  jtfHeight.setText(hinput + ".");
+		  jtfWeight.setText(winput + ".");
 	  }else if(e.getSource() == btclear){
-		  jtfHeight.setText(input + "");
+		  jtfHeight.setText("");
+		  jtfWeight.setText("");
 	  }
 	  
 	  double height = Double.parseDouble(jtfHeight.getText());

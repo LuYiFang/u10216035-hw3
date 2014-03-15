@@ -5,11 +5,11 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-abstract class BMICalculator extends JFrame implements ActionListener  {
+abstract class BMICalculator extends JFrame{
 	  private JButton jbtBMICalculator1 = new JButton("clear"); 
 	  private JButton jbtBMICalculator2 = new JButton("enter"); 
 	
-	  private JTextField jtfHight = new JTextField();
+	  private JTextField jtfHeight = new JTextField();
 	  private JTextField jtfWeight = new JTextField();
 	  private JTextField jtfBMI = new JTextField();
 	  private JTextField jtfStatus = new JTextField();
@@ -29,7 +29,7 @@ abstract class BMICalculator extends JFrame implements ActionListener  {
 	  public BMICalculator(){
 		  JPanel p3 = new JPanel();
 		  p3.setLayout(new GridLayout(1,4));
-		  p3.add(jtfHight);
+		  p3.add(jtfHeight);
 		  p3.add(jtfWeight);
 		  p3.add(jtfBMI);
 		  p3.add(jtfStatus);
@@ -54,7 +54,7 @@ abstract class BMICalculator extends JFrame implements ActionListener  {
 			jbtBMICalculator2.addActionListener(new UseBMIClass());
 }
 
-public class UseBMIClass  implements ActionListener{
+private class UseBMIClass  implements ActionListener{
   public static void main(String[] args) {
 	  BMICalculator frame = new BMICalculator();
 	  frame.setSize(400,500);
@@ -71,6 +71,17 @@ public class UseBMIClass  implements ActionListener{
       System.out.println("The BMI for " + bmi2.getName() + " is "
         + bmi2.getBMI() + " " + bmi2.getStatus());
   }
+  @Override
+  public void actionPerform(ActionEvent e){
+	  double height = Double.parseDouble(jtfHeight.getText());
+	  double weight = Double.parseDouble(jtfWeight.getText());
+	  
+	  BMI bmi = new BMI(weight,height);
+	  
+	  jtfBMI.setText(String.format("%2f",bmi.getBMI()));
+	  jtfStatus.setText(String.format(bmi.getStatus()));
+  }
+  }
 }	  
 
 
@@ -79,8 +90,9 @@ class BMI {
 	
     private String name;
     
-    public BMI(){
-    	
+    public BMI(double weight,double height){
+    	this.weight = weight;
+        this.height = height;
     }
     
     private int age;

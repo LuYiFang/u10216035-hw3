@@ -5,14 +5,14 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-abstract class BMICalculator extends JFrame{
+public class BMICalculator extends JFrame{
 	  private JButton jbtBMICalculator1 = new JButton("clear"); 
 	  private JButton jbtBMICalculator2 = new JButton("enter"); 
 	
-	  private JTextField jtfHeight = new JTextField();
-	  private JTextField jtfWeight = new JTextField();
-	  private JTextField jtfBMI = new JTextField();
-	  private JTextField jtfStatus = new JTextField();
+	  private static JTextField jtfHeight = new JTextField();
+	  private static JTextField jtfWeight = new JTextField();
+	  private static JTextField jtfBMI = new JTextField();
+	  private static JTextField jtfStatus = new JTextField();
 	  JButton bt1 = new JButton("1");
 	  JButton bt2 = new JButton("2");
 	  JButton bt3 = new JButton("3");
@@ -54,7 +54,7 @@ abstract class BMICalculator extends JFrame{
 			jbtBMICalculator2.addActionListener(new UseBMIClass());
 }
 
-private class UseBMIClass  implements ActionListener{
+private static class UseBMIClass  implements ActionListener{
   public static void main(String[] args) {
 	  BMICalculator frame = new BMICalculator();
 	  frame.setSize(400,500);
@@ -72,7 +72,7 @@ private class UseBMIClass  implements ActionListener{
         + bmi2.getBMI() + " " + bmi2.getStatus());
   }
   @Override
-  public void actionPerform(ActionEvent e){
+  public void actionPerformed(ActionEvent e){
 	  double height = Double.parseDouble(jtfHeight.getText());
 	  double weight = Double.parseDouble(jtfWeight.getText());
 	  
@@ -88,13 +88,11 @@ private class UseBMIClass  implements ActionListener{
 
 class BMI {
 	
-    private String name;
-    
     public BMI(double weight,double height){
     	this.weight = weight;
         this.height = height;
     }
-    
+    private String name;
     private int age;
     private double weight; // in pounds
     private double height; // in inches

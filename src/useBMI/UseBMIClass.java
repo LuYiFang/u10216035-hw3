@@ -1,29 +1,33 @@
 package useBMI;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
-class SetGUI extends JFrame{
+abstract class SetGUI extends JFrame implements ActionListener{
 	
 	JPanel p1 = new JPanel();
 	p1.setLayout(new GridLayout(4,3));
 	
 	for(int i = 1;i < 10; i++){
 		p1.add(new JButton("" + i));
-		p1.add(new JButton("clear"));
-		p1.add(new JButton("" + 0));
-		p1.add(new JButton("."));
-		
-	JPanel p2 = new JPanel();
+	}	
+	p1.add(new JButton("clear"));
+	p1.add(new JButton("" + 0));
+	p1.add(new JButton("."));	
+	
+		JPanel p2 = new JPanel();
 	p2.setLayout(new GridLayout(2,1));
 	p2.add(new JButton("backspace"));
 	p2.add(new JButton("enter"));
 	
-	JPanel p3 = new JPanel();
-	p3.setLayout(new GridLayout(1,3));
-	p3.add(new JTextField("hight"));
-	p3.add(new JTextField("weight"));
-	p3.add(new JTextField("BMI"));
+	
+	
+	public void actionPerform(ActionEvent e){
+		
 	}
+	
 }
 
 public class UseBMIClass {
@@ -47,7 +51,19 @@ public class UseBMIClass {
 
 
 class BMI {
+	private JTextField jtfHight = new JTextField();
+	private JTextField jtfWeight = new JTextField();
+	private JTextField jtfBMI = new JTextField();
     private String name;
+    
+    public BMI(){
+    	JPanel p3 = new JPanel();
+    	p3.setLayout(new GridLayout(1,3));
+    	p3.add(jtfHight);
+    	p3.add(jtfWeight);
+    	p3.add(jtfBMI);
+    }
+    
     private int age;
     private double weight; // in pounds
     private double height; // in inches
@@ -55,6 +71,7 @@ class BMI {
     public static final double METERS_PER_INCH = 0.0254;  
   
     public BMI(String name, int age, double weight, double height) {
+    	
       this.name = name;
       this.age = age;
       this.weight = weight;

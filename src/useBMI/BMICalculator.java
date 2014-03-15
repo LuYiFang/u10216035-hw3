@@ -87,33 +87,33 @@ private static class UseBMIClass  implements ActionListener{
   }
   @Override
   public void actionPerformed(ActionEvent e){
-	  JTextField jtf =  new JTextField();
-	  String input = jtf.getText();
+	  
+	  String input = jtfHeight.getText();
 	  
 	  if(e.getSource() == bt1){
-		  jtf.setText(input + "1");
+		  jtfHeight.setText(input + "1");
 	  }else if(e.getSource() == bt2){
-		  jtf.setText(input + "2");
+		  jtfHeight.setText(input + "2");
 	  }else if(e.getSource() == bt3){
-		  jtf.setText(input + "3");
+		  jtfHeight.setText(input + "3");
 	  }else if(e.getSource() == bt4){
-		  jtf.setText(input + "4");
+		  jtfHeight.setText(input + "4");
 	  }else if(e.getSource() == bt5){
-		  jtf.setText(input + "5");
+		  jtfHeight.setText(input + "5");
 	  }else if(e.getSource() == bt6){
-		  jtf.setText(input + "6");
+		  jtfHeight.setText(input + "6");
 	  }else if(e.getSource() == bt7){
-		  jtf.setText(input + "7");
+		  jtfHeight.setText(input + "7");
 	  }else if(e.getSource() == bt8){
-		  jtf.setText(input + "8");
+		  jtfHeight.setText(input + "8");
 	  }else if(e.getSource() == bt9){
-		  jtf.setText(input + "9");
+		  jtfHeight.setText(input + "9");
 	  }else if(e.getSource() == bt0){
-		  jtf.setText(input + "0");
+		  jtfHeight.setText(input + "0");
 	  }else if(e.getSource() == btpoint){
-		  jtf.setText(input + ".");
+		  jtfHeight.setText(input + ".");
 	  }else if(e.getSource() == btclear){
-		  jtf.setText(input + "");
+		  jtfHeight.setText(input + "");
 	  }
 	  
 	  double height = Double.parseDouble(jtfHeight.getText());

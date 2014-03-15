@@ -25,8 +25,7 @@ public class BMICalculator extends JFrame{
 	  private JButton btenter = new JButton("enter");
 	 
 	  public BMICalculator(){
-		  JPanel p3 = new JPanel();
-		  p3.setLayout(new GridLayout(1,4));
+		  JPanel p3 = new JPanel(new GridLayout(1,4));
 		  p3.add(jtfHeight);
 		  p3.add(jtfWeight);
 		  p3.add(jtfBMI);
@@ -46,6 +45,10 @@ public class BMICalculator extends JFrame{
 			p2.setLayout(new GridLayout(2,1));
 			p2.add(new JButton("backspace"));
 			p2.add(new JButton("enter"));
+			
+			add(p1,BorderLayout.SOUTH);
+			add(p2,BorderLayout.EAST);
+			add(p3,BorderLayout.CENTER);
 			
 			bt1.addActionListener(new UseBMIClass());
 			bt2.addActionListener(new UseBMIClass());

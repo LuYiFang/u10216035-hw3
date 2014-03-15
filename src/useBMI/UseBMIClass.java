@@ -28,6 +28,13 @@ class SetGUI extends JFrame{
 
 public class UseBMIClass {
   public static void main(String[] args) {
+	  SetGUI frame = new SetGUI();
+	  frame.setSize(400,500);
+	  frame.setTitle("BMI Calculator");
+	  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	  frame.setVisible(true);
+	  frame.setLocationRelativeTo(null);
+	  
       BMI bmi1 = new BMI("John Doe", 18, 145, 70);
       System.out.println("The BMI for " + bmi1.getName() + " is "
         + bmi1.getBMI() + " " + bmi1.getStatus());

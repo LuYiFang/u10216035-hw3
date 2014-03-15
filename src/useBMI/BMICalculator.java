@@ -11,19 +11,20 @@ public class BMICalculator extends JFrame{
 	  private static JTextField jtfWeight = new JTextField();
 	  private static JTextField jtfBMI = new JTextField();
 	  private static JTextField jtfStatus = new JTextField();
-	  private JButton bt1 = new JButton("1");
-	  private JButton bt2 = new JButton("2");
-	  private JButton bt3 = new JButton("3");
-	  private JButton bt4 = new JButton("4");
-	  private JButton bt5 = new JButton("5");
-	  private JButton bt6 = new JButton("6");
-	  private JButton bt7 = new JButton("7");
-	  private JButton bt8 = new JButton("8");
-	  private JButton bt9 = new JButton("9");
-	  private JButton bt0 = new JButton("0");
-	  private JButton btclear = new JButton("clear");
-	  private JButton btenter = new JButton("enter");
-	 
+	  private static JButton bt1 = new JButton("1");
+	  private static JButton bt2 = new JButton("2");
+	  private static JButton bt3 = new JButton("3");
+	  private static JButton bt4 = new JButton("4");
+	  private static JButton bt5 = new JButton("5");
+	  private static JButton bt6 = new JButton("6");
+	  private static JButton bt7 = new JButton("7");
+	  private static JButton bt8 = new JButton("8");
+	  private static JButton bt9 = new JButton("9");
+	  private static JButton bt0 = new JButton("0");
+	  private static JButton btpoint = new JButton(".");
+	  private static JButton btclear = new JButton("clear");
+	  private static JButton btenter = new JButton("enter");
+	
 	  public BMICalculator(){
 		  JPanel p3 = new JPanel(new GridLayout(1,4));
 		  p3.add(jtfHeight);
@@ -60,17 +61,17 @@ public class BMICalculator extends JFrame{
 			bt8.addActionListener(new UseBMIClass());
 			bt9.addActionListener(new UseBMIClass());
 			bt0.addActionListener(new UseBMIClass());
-			
-			
-			
+			btpoint.addActionListener(new UseBMIClass());
 			btclear.addActionListener(new UseBMIClass());
 			btenter.addActionListener(new UseBMIClass());
+			
+			
 }
 
 private static class UseBMIClass  implements ActionListener{
   public static void main(String[] args) {
 	  BMICalculator frame = new BMICalculator();
-	  frame.setSize(400,500);
+	  frame.setSize(500,400);
 	  frame.setTitle("BMI Calculator");
 	  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	  frame.setVisible(true);
@@ -86,6 +87,35 @@ private static class UseBMIClass  implements ActionListener{
   }
   @Override
   public void actionPerformed(ActionEvent e){
+	  JTextField jtf =  new JTextField();
+	  String input = jtf.getText();
+	  
+	  if(e.getSource() == bt1){
+		  jtf.setText(input + "1");
+	  }else if(e.getSource() == bt2){
+		  jtf.setText(input + "2");
+	  }else if(e.getSource() == bt3){
+		  jtf.setText(input + "3");
+	  }else if(e.getSource() == bt4){
+		  jtf.setText(input + "4");
+	  }else if(e.getSource() == bt5){
+		  jtf.setText(input + "5");
+	  }else if(e.getSource() == bt6){
+		  jtf.setText(input + "6");
+	  }else if(e.getSource() == bt7){
+		  jtf.setText(input + "7");
+	  }else if(e.getSource() == bt8){
+		  jtf.setText(input + "8");
+	  }else if(e.getSource() == bt9){
+		  jtf.setText(input + "9");
+	  }else if(e.getSource() == bt0){
+		  jtf.setText(input + "0");
+	  }else if(e.getSource() == btpoint){
+		  jtf.setText(input + ".");
+	  }else if(e.getSource() == btclear){
+		  jtf.setText(input + "");
+	  }
+	  
 	  double height = Double.parseDouble(jtfHeight.getText());
 	  double weight = Double.parseDouble(jtfWeight.getText());
 	  

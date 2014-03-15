@@ -27,9 +27,13 @@ public class BMICalculator extends JFrame{
 	  private static JButton btenter = new JButton("enter");
 	
 	  public BMICalculator(){
-		  JPanel p3 = new JPanel(new GridLayout(1,4));
-		  p3.add(jtfHeight);
+		  JPanel p3 = new JPanel(new GridLayout(2,4));
+		  p3.add(new JLabel("Weight"));
+		  p3.add(new JLabel("Height"));
+		  p3.add(new JLabel("BMI"));
+		  p3.add(new JLabel("Status"));
 		  p3.add(jtfWeight);
+		  p3.add(jtfHeight);
 		  p3.add(jtfBMI);
 		  p3.add(jtfStatus);
 		  

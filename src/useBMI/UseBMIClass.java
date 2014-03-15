@@ -23,7 +23,7 @@ abstract class SetGUI extends JFrame implements ActionListener{
 	p2.add(new JButton("enter"));
 	
 	
-	
+	@Override
 	public void actionPerform(ActionEvent e){
 		
 	}
@@ -47,28 +47,33 @@ public class UseBMIClass {
       System.out.println("The BMI for " + bmi2.getName() + " is "
         + bmi2.getBMI() + " " + bmi2.getStatus());
   }
+  
+  private JTextField jtfHight = new JTextField();
+  private JTextField jtfWeight = new JTextField();
+  private JTextField jtfBMI = new JTextField();
+  private JTextField jtfStatus = new JTextField();
+  public UseBMIClass(){
+	  JPanel p3 = new JPanel();
+	  p3.setLayout(new GridLayout(1,4));
+	  p3.add(jtfHight);
+	  p3.add(jtfWeight);
+	  p3.add(jtfBMI);
+	  p3.add(jtfStatus);
+}	  
 }
 
 
 class BMI {
-	private JTextField jtfHight = new JTextField();
-	private JTextField jtfWeight = new JTextField();
-	private JTextField jtfBMI = new JTextField();
-	private JTextField jtfStatus = new JTextField();
+	
     private String name;
     
     public BMI(){
-    	JPanel p3 = new JPanel();
-    	p3.setLayout(new GridLayout(1,4));
-    	p3.add(jtfHight);
-    	p3.add(jtfWeight);
-    	p3.add(jtfBMI);
-    	p3.add(jtfStatus);
+    	
     }
     
     private int age;
-    private double weight = Double.parseDouble(jtfWeight.getText()); // in pounds
-    private double height = Double.parseDouble(jtfHight.getText());; // in inches
+    private double weight; // in pounds
+    private double height; // in inches
     public static final double KILOGRAMS_PER_POUND = 0.45359237; 
     public static final double METERS_PER_INCH = 0.0254;  
   
@@ -117,6 +122,4 @@ class BMI {
     public double getHeight() {
       return height;
     }
-    
-
 }

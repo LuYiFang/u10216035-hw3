@@ -13,6 +13,16 @@ class SetGUI extends JFrame{
 		p1.add(new JButton("" + 0));
 		p1.add(new JButton("."));
 		
+	JPanel p2 = new JPanel();
+	p2.setLayout(new GridLayout(2,1));
+	p2.add(new JButton("backspace"));
+	p2.add(new JButton("enter"));
+	
+	JPanel p3 = new JPanel();
+	p3.setLayout(new GridLayout(1,3));
+	p3.add(new JTextField("hight"));
+	p3.add(new JTextField("weight"));
+	p3.add(new JTextField("BMI"));
 	}
 }
 

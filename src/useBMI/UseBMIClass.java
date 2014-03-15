@@ -5,14 +5,28 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-abstract class ButtonListener extends JFrame implements ActionListener  {
+abstract class BMICalculator extends JFrame implements ActionListener  {
+	  private JButton jbtBMICalculator1 = new JButton("clear"); 
+	  private JButton jbtBMICalculator2 = new JButton("enter"); 
 	
-	 private JTextField jtfHight = new JTextField();
+	  private JTextField jtfHight = new JTextField();
 	  private JTextField jtfWeight = new JTextField();
 	  private JTextField jtfBMI = new JTextField();
 	  private JTextField jtfStatus = new JTextField();
+	  JButton bt1 = new JButton("1");
+	  JButton bt2 = new JButton("2");
+	  JButton bt3 = new JButton("3");
+	  JButton bt4 = new JButton("4");
+	  JButton bt5 = new JButton("5");
+	  JButton bt6 = new JButton("6");
+	  JButton bt7 = new JButton("7");
+	  JButton bt8 = new JButton("8");
+	  JButton bt9 = new JButton("9");
+	  JButton bt0 = new JButton("0");
+	  JButton btclear = new JButton("clear");
+	  JButton btenter = new JButton("enter");
 	 
-	  public ButtonListener(){
+	  public BMICalculator(){
 		  JPanel p3 = new JPanel();
 		  p3.setLayout(new GridLayout(1,4));
 		  p3.add(jtfHight);
@@ -30,22 +44,19 @@ abstract class ButtonListener extends JFrame implements ActionListener  {
 			p1.add(new JButton("" + 0));
 			p1.add(new JButton("."));	
 			
-				JPanel p2 = new JPanel();
+			JPanel p2 = new JPanel();
 			p2.setLayout(new GridLayout(2,1));
 			p2.add(new JButton("backspace"));
 			p2.add(new JButton("enter"));
 			
 			
-			@Override
-			public void actionPerform(ActionEvent e){
-				
-			}
-	  }
+			jbtBMICalculator1.addActionListener(new UseBMIClass());
+			jbtBMICalculator2.addActionListener(new UseBMIClass());
 }
 
-public class UseBMIClass{
+public class UseBMIClass  implements ActionListener{
   public static void main(String[] args) {
-	  ButtonListener frame = new ButtonListener();
+	  BMICalculator frame = new BMICalculator();
 	  frame.setSize(400,500);
 	  frame.setTitle("BMI Calculator");
 	  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
